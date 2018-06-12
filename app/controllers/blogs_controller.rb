@@ -15,11 +15,12 @@ class BlogsController < ApplicationController
     
     def create
         @blog = Blog.new(blog_params)
-    if @blog.save
-        redirect_to new_blog_path,notice: 'ブログが作成されました'
-    else
+        
+      if @blog.save
+        redirect_to blogs_path, notice: 'ブログが作成されました'
+      else
         render 'new'
-    end
+      end
     end
     
     def show
@@ -30,7 +31,7 @@ class BlogsController < ApplicationController
     
     def update
     if @blog.update(blog_params)
-        redirect_to blogs_path,notice: '編集しました'
+        redirect_to blogs_path, notice: '編集しました'
     else
         render 'edit'
     end
