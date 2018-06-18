@@ -3,12 +3,25 @@
   <head>
     <title>Blogapp</title>
     <%= csrf_meta_tags %>
-
+<meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <header>
+  <ul>
+    <li><%=link_to "ホーム",blogs_path %></li>
+    <li><%=link_to "つぶやく",new_blog_path %></li>
+  </ul>
+</header>
+
 
   <body>
     <%= yield %>
   </body>
+  
+  <footer>
+  <p>HIROTOSHI KAWABUCHI</p>
+  <p>© 2015-2016 Copyright DIVE INTO CODE.</p>
+  </footer>
+  
 </html>
