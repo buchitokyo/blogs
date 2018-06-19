@@ -5,8 +5,9 @@
   <div class="contents">
     <p><%= notice %></p>
 
-　　<ul class = "row">
+　　
 　　　<% @blogs.each do |blog| %>
+　　　<ul class = "row">
         <li class = "col-sm-6 col-md-6">タイトル:<%= blog.title %></th>
         <li class = "col-sm-6 col-md-6">内容:<%= blog.content %></th>
    </ul>
