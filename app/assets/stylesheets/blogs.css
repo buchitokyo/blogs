@@ -55,7 +55,10 @@ html {
   min-height: 100%; }
 
 body {
-  text-align: center; }
+  text-align: center;
+  background: url("/images/IMG_7663.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 article {
   font-size: 30px;
