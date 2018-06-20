@@ -55,10 +55,9 @@ html {
   min-height: 100%; }
 
 body {
-  text-align: center; }
-
-body {
-  background: image-url("/images/IMG_7661.JPG") center no-repeat;
+  text-align: center;
+  background: url("/images/IMG_7663.JPG");
+  background-repeat: no-repeat;
   background-size: cover; }
 
 article {
