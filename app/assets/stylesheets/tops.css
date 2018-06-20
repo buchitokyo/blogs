@@ -1,6 +1,5 @@
 .main-header {
-  background: url(/images/img_7663.jpg);
-  background-repeat: no-repeat;
+  background-image: image-url("img_7663.jpg") no-repeat center;
   background-size: cover; }
 
 /*# sourceMappingURL=tops.css.map */
