@@ -5,12 +5,12 @@
   <div class="contents">
     <p><%= notice %></p>
 
-　　
-　　　<% @blogs.each do |blog| %>
-　　　<ul class = "row">
+   <ul class = "row">　　
+   <% @blogs.each do |blog| %>
         <li class = "col-sm-6 col-md-6">タイトル:<%= blog.title %></th>
         <li class = "col-sm-6 col-md-6">内容:<%= blog.content %></th>
-   </ul>
+   <% end %>
+  </ul>
  </div>
 
 <div class ='btn'>
@@ -20,7 +20,6 @@
         <li class = "col-sm-6 col-md-3"><%= link_to 'ブログを削除する', blog_path(blog.id), method: :delete ,data: { confirm: '本当に削除してよろしいですか'}, class: 'btn btn-info' %></li>
         <li class = "col-sm-6 col-md-3"><%= link_to '新しくブログを投稿する', new_blog_path, class: 'btn btn-info' %></li>
     </ul>
-<% end %>
 </div>
 
 <div class='explain'>
