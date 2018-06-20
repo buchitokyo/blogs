@@ -61,12 +61,15 @@ html {
   position: relative;
   min-height: 100%;
 }
-
 body {
-  text-align: center;
-  background: url('/images/IMG_7663.jpg');
+  background-image: image-url("IMG_7663.jpg");
+  /*background-image: url("IMG_7663.jpg");*/
   background-repeat: no-repeat;
   background-size: cover;
+  }
+  
+body {
+  text-align: center;
 }
 
  article {
