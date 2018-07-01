@@ -3,7 +3,7 @@
   <head>
     <title>Blogapp</title>
     <%= csrf_meta_tags %>
-    
+
 <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -14,12 +14,24 @@
     <li><%=link_to "一覧",blogs_path %></li>
     <li><%=link_to "つぶやく",new_blog_path %></li>
     <li><%=link_to "ホーム", root_path %></li>
+
+    <% if logged_in? %>
+      <li class ="log"><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
+    <% else %>
+      <li class ="log"><%= link_to "Sign up", new_user_path %></li>
+      <li class ="log"><%= link_to "Login", new_session_path %></li>
+    <% end %>
   </ul>
+
 </header>
    <div class ="main">
+     <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+
     <%= yield %>
    </div>
-  
+
 <footer>
   <p>HIROTOSHI KAWABUCHI</p>
   <p>© 2015-2016 Copyright DIVE INTO CODE.</p>
