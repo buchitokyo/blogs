@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @favorites_blogs = @user.favorite_blogs
+    @favorite_blogs = @user.favorite_blogs
   end
 
   private

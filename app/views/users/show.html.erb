@@ -3,10 +3,11 @@
   <P>メールアドレス:<%= @user.try(:email) %></p>
     <br>
     <h2>お気に入り</h2>
-    <% @favorites_blogs.each do |myfav| %>
+    <% @favorite_blogs.each do |favorite_blog| %>
+    <p><%=  favorite_blog.user.name %></p>
       <ul class = 'row'>
-        <li class = "col-sm-6 col-md-6" >タイトル:<%= myfav.title %></li>
-        <li class = "col-sm-6 col-md-6">内容:<%= myfav.content %></li>
+        <li class = "col-sm-6 col-md-6">タイトル:<%= favorite_blog.title %></li>
+        <li class = "col-sm-6 col-md-6">内容:<%= favorite_blog.content %></li>
       </ul>
     <% end %>
 </div>
