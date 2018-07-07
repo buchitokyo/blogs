@@ -9,11 +9,10 @@
 <%= f.label :password %>
 <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
 
-    <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-    </div>
+<%= f.label :remember_me, class: "checkbox inline" do %>
+<%= f.check_box :remember_me %>
+    <span>Remember me</span>
+  <% end %>
 
 <%= f.submit "LogIn", class: "btn btn-info" %>
 <% end %>

@@ -1,4 +1,12 @@
 <div class = "container">
   <h1><%= @user.name %>のアカウントページ</h1>
-  <P>メールアドレス<%= @user.email %></p>
+  <P>メールアドレス:<%= @user.email %></p>
+    <br>
+    <h2>お気に入り</h2>
+    <% @favorites_blogs.each do |myfav| %>
+      <ul class = 'row'>
+        <li class = "col-sm-6 col-md-6" >タイトル:<%= myfav.title %></li>
+        <li class = "col-sm-6 col-md-6">内容:<%= myfav.content %></li>
+      </ul>
+    <% end %>
 </div>

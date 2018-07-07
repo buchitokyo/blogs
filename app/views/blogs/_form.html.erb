@@ -2,7 +2,7 @@
 <%= form_with(model: @blog, local: true, url: choose_new_or_edit) do |form| %>
   <% if @blog.errors.any? %>
 
-<div class ="field_with_errors">
+ <div class ="field_with_errors">
       <p><%= @blog.errors.count %>件のエラーがあります。</p>
 
       <% @blog.errors.full_messages.each do |msg| %>

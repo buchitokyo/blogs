@@ -11,10 +11,10 @@
 <body>
 <header>
   <ul>
+    <li><%=link_to "ホーム", root_path %></li>
     <li><%=link_to "一覧",blogs_path %></li>
     <li><%=link_to "つぶやく",new_blog_path %></li>
-    <li><%=link_to "ホーム", root_path %></li>
-
+    <li><%=link_to "プロフィール", user_path(current_user.id) %></li>
     <% if logged_in? %>
       <li class ="log"><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
     <% else %>
