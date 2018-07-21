@@ -23,7 +23,7 @@ class BlogsController < ApplicationController
 
         if @blog.save
           # メール送信機能
-          ContactMailer.contact_mail(@blog).deliver
+          #ContactMailer.contact_mail(@blog).deliver
           redirect_to blogs_path, notice: 'ブログが作成されました'
         else
           render 'new'
