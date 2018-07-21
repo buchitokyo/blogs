@@ -1,6 +1,7 @@
 <div class = "container">
   <h1><%= @user.try(:name) %>のアカウントページ</h1>
   <P>メールアドレス:<%= @user.try(:email) %></p>
+  <%= image_tag @user.icon %></p>
     <br>
     <h2>お気に入り</h2>
     <% @favorite_blogs.each do |favorite_blog| %>

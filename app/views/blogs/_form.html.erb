@@ -20,6 +20,15 @@
       <%= form.label :content %>
       <%= form.text_area :content ,size: "45x10" %>
   </div>
+
+  <div class = "blog_title">
+    <%= form.label :image %>
+    <!-- 確認画面から新規作成画面に戻った時に、 -->
+    <!-- アップロードした画像を表示させるための記述 -->
+    <%= image_tag(@blog.image.url) if @blog.image.url %>
+    <%= form.file_field :image, id: :blog_image %>
+  </div>
+
   <%= form.submit "登録する", class: 'btn btn-info' %>
   <%= link_to "ブログ一覧にもどる", blogs_path, class: 'btn btn-info' %>
   <% end %>

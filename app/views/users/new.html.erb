@@ -25,6 +25,9 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password Comfirmation" %>
 
+  <%= f.label :登録写真 %>
+  <%= f.file_field :icon, id: :user_icon %>
+
   <%= f.submit "SignUp", class: 'btn btn-info' %>
 <% end %>
 
