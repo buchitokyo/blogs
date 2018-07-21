@@ -20,11 +20,14 @@ class BlogsController < ApplicationController
         @blog.user_id = current_user.id #現在ログインしているuserのidをblog.user_idに代入し、blogのuser_idカラムに挿入
         #user_idはすでに、テーブルが関連づけられているだけでは、使用できない。アソシエーションをかけ、t.referencesを使用して、外部キーの
         #カラムをblogsに作成する。また、その際,外部キーを使用する際、blogsは belongs_to :user　になる
-      if @blog.save
-        redirect_to blogs_path, notice: 'ブログが作成されました'
-      else
-        render 'new'
-      end
+
+        if @blog.save
+          # メール送信機能
+          ContactMailer.contact_mail(@blog).deliver
+          redirect_to blogs_path, notice: 'ブログが作成されました'
+        else
+          render 'new'
+        end
     end
 
     def show
@@ -64,7 +67,6 @@ class BlogsController < ApplicationController
     end
     def logged_in_user
       unless current_user #ログイン中のuserでない場合は、ログイン画面へリダイレクト
-        flash[:referer] = 'ログインしてください'
         render new_session_path
       end
     end

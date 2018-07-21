@@ -48,19 +48,15 @@ footer {
   bottom: 0;
   text-align: center;
 }
-
 html {
   position: relative;
   min-height: 100%;
-}
-
-.main {
 }
 .top {
     width: 100%;
     height: 800px;
     background: url(IMG_7663.JPG);
-    background-size:cover;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 .explain {
@@ -72,4 +68,7 @@ html {
     margin-top: 0;
     text-align: center;
     padding-top: 10%;
+}
+body {
+  margin: 0;
 }

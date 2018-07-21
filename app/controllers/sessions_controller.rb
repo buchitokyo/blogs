@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       #ログイン成功した場合
       session[:user_id] = user.id #これはuserのidを付与しているとみられる。ユーザーのブラウザ内のcookiesに暗号化されたユーザーIDが自動で生成されます。
-      redirect_to root_path
+      redirect_to user_path(current_user.id)
     else
       #ログイン失敗した場合
       flash.now[:danger] = 'ログインに失敗しました'

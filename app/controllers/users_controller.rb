@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     if @user.save
       #signinしたら,login状態にさせる
-      session[:user_id] = @user.id
+      #session[:user_id] = @user.id
       redirect_to new_blog_path
     #保存した場合
     # redirect_to user_path(@user.id)
